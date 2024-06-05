@@ -53,3 +53,13 @@ This is the code repository for 2024 game theory course project by group 1.
 - `fictitious.py`
 
   Code for choosing actions using fictitious play.
+
+- `interface.py`
+
+  Interact with the strategies and conduct performance test.
+
+  - First enter the number of players (only support 2 or 3 players), then enter the type for each player. There are 5 types of players: human, search algorithm, dataset with nearest neighbor, dataset with second nearest neighbor, fictitious play.
+
+    Run the code to get the final scores of each player.
+
+  - For human interaction, set `REPEAT_TIME` to be 1; for performance test, set `REPEAT_TIME` to be a large number (e.g. 100).
