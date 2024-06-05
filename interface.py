@@ -90,7 +90,10 @@ if __name__ == "__main__":
                 print(f"Round: {round}")
                 show_status(player_list, num_player)
             alive = [player_list[i].health > 0 for i in range(3)]
-            actions = [choose_action(player_list, round, i, types[i], num_player, kdtree, label, history) for i in range(num_player)]
+            actions = [0] * num_player
+            for i in range(num_player):
+                if player_list[i].health > 0:
+                    actions[i] = choose_action(player_list, round, i, types[i], num_player, kdtree, label, history)
             if human:
                 print(f"The action of each player is {actions}")
             if num_player == 2:
