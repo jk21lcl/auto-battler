@@ -35,3 +35,21 @@ This is the code repository for 2024 game theory course project by group 1.
   Code for data augmentation.
 
   - Specify the input path and the output path, then directly run the code for generating augmented data.
+
+- `game_setting.py`
+
+  3-player 3-choice game.
+
+  - 3-choice: 0 for upgrading as much as possible, 1 for refreshing using all money, 2 for doing nothing.
+
+- `search.py`
+
+  Code for search algorithm.
+
+- `dataset.py`
+
+  Code for choosing actions based on dataset.
+
+- `fictitious.py`
+
+  Code for choosing actions using fictitious play.
