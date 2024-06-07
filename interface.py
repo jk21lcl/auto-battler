@@ -22,9 +22,10 @@ def choose_type(index):
     while True:
         message = f"Select the type of player {index + 1}\n"
         message += "0 for human, 1 for search algorithm, 2 for dataset with nearest neighbor, "
-        message += "3 for dataset with second nearest neighbor, 4 for fictitious play\n"
+        message += "3 for dataset with second nearest neighbor, 4 for fictitious play, "
+        message += "5 for pure random strategy\n"
         s = input(message)
-        if s == '0' or s == '1' or s == '2' or s == '3' or s == '4':
+        if s == '0' or s == '1' or s == '2' or s == '3' or s == '4' or s == '5':
             return int(s)
         print("Input out of range, please input again.")
 
@@ -42,10 +43,12 @@ def input_action(index):
 
 # do not modify the input
 def choose_action(list : list[Player], round, i, type, num_player, kdtree : KDTree, label, history):
+    if type == 0:
+        return input_action(i)
+    if type == 5:
+        return random.randint(0, 2)
     if num_player == 2:
         j = (i + 1) % 2
-        if type == 0:
-            return input_action(i)
         if type == 1:
             return search([list[i], list[j], copy.deepcopy(list[j])], round)
         if type == 2 or type == 3:
@@ -56,13 +59,11 @@ def choose_action(list : list[Player], round, i, type, num_player, kdtree : KDTr
     if num_player == 3:
         j = (i + 1) % 3
         k = (i + 2) % 3
-        opp = j if random.randint(0, 1) == 0 else k  # for dataset strategy
-        if type == 0:
-            return input_action(i)
         if type == 1:
             return search([list[i], list[j], list[k]], round)
         if type == 2 or type == 3:
             nearest = (type == 2)
+            opp = j if random.randint(0, 1) == 0 else k
             return dataset(list[i], list[opp], round, kdtree, label, nearest)
         if type == 4:
             return fictitious([list[i], list[j], list[k]], round, history[j], history[k])

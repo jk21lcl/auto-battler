@@ -6,7 +6,7 @@ This is the code repository for 2024 game theory course project by group 1.
 ## Overview
 
 - We implement multi-player auto battler game in our setting, and invent a method to compute win rate for strategies. We also support figure plotting of win rate for different parameters in game setting, such that game developers can reach a balanced game.
-- We invent a search algorithm for 3-player game based on heuristic search. We also develop an augmented dataset of expert strategies and implement a strategy based on fictitious play as control group. Besides, we support an interface for human interaction with these strategies and performance testing among these strategies.
+- We invent a search algorithm for 3-player game based on heuristic search. We also develop an augmented dataset of expert strategies and implement a strategy based on fictitious play as contrast group. Besides, we support an interface for human interaction with these strategies and performance testing among these strategies.
 
 ## Brief introduction of each file
 
@@ -58,7 +58,7 @@ This is the code repository for 2024 game theory course project by group 1.
 
   Interact with the strategies and conduct performance test.
 
-  - First enter the number of players (only support 2 or 3 players), then enter the type for each player. There are 5 types of players: human, search algorithm, dataset with nearest neighbor, dataset with second nearest neighbor, fictitious play.
+  - First enter the number of players (only support 2 or 3 players), then enter the type for each player. There are 6 types of players: human, search algorithm, dataset with nearest neighbor, dataset with second nearest neighbor, fictitious play, pure random.
 
     Run the code to get the final scores of each player.
 

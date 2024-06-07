@@ -6,7 +6,7 @@ from scipy.spatial import KDTree
 THRESHOLD = 0.5
 
 def normalize(list):
-    norm = [100, 1000, 100, 10, 100, 1000, 100, 10, 25]
+    norm = [100, 1000, 300, 10, 100, 1000, 300, 10, 25]
     return [list[i] / norm[i] for i in range(9)]
 
 def get_parameter(player : Player):

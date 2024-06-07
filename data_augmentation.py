@@ -3,7 +3,7 @@
 from random import random, randint
 from math import floor
 
-REPEAT_TIME = 1000  # the repetition times of each line of data
+REPEAT_TIME = 2000  # the repetition times of each line of data
 DISTURB_RATE = 0.2  # the disturb amplitude for each parameter
 RANDOM_PROB = 0.3  
 # the probability that using random choice, otherwise remain the 
@@ -16,7 +16,7 @@ def augment(input_path, output_path):
     fin = open(input_path, 'r')
     fout = open(output_path, 'w')
     min = [1, 0, 0, 1, 1, 0, 0, 1, 1]
-    max = [100, 1000, 100, 10, 100, 1000, 100, 10, 25]
+    max = [100, 1000, 300, 10, 100, 1000, 300, 10, 25]
     
     for line in fin:
         fout.write(line)
@@ -34,4 +34,4 @@ def augment(input_path, output_path):
             fout.write("\n")
 
 if __name__ == "__main__":
-    augment("data.txt", "augmented_data.txt")
+    augment("data.txt", "augmented_data_2.txt")
