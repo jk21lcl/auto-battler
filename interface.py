@@ -6,7 +6,7 @@ from search import search
 from dataset import construct_kd_tree, dataset, KDTree
 from fictitious import fictitious
 
-REPEAT_TIME = 100
+REPEAT_TIME = 1000
 # the repeat times of the game
 # set to 1 for human interaction
 # set to large number (e.g. 100) for performance test
@@ -77,8 +77,10 @@ if __name__ == "__main__":
     
     kdtree, label = construct_kd_tree("augmented_data.txt")
     
+    file = open("output.txt", 'w')
+    
     scores = [0] * num_player
-    for _ in range(REPEAT_TIME):
+    for iter in range(REPEAT_TIME):
         player_list = [Player() for _ in range(3)]
         if num_player == 2:
             player_list[2] = Player(0)  # set the third player out
@@ -107,6 +109,10 @@ if __name__ == "__main__":
         score = ComputeScore(alive, [player_list[i].health > 0 for i in range(3)])
         for i in range(num_player):
             scores[i] += score[i]
+        if (iter + 1) % 100 == 0:
+            file.write(f"iteration: {iter + 1}, win_rate: {scores[0] / (iter + 1)}\n")
     win_rate = [scores[i] / REPEAT_TIME for i in range(num_player)]
     print(f"Final scores: {scores}")
     print(f"Win rate: {win_rate}")
+    
+    file.close()

@@ -63,3 +63,17 @@ This is the code repository for 2024 game theory course project by group 1.
     Run the code to get the final scores of each player.
 
   - For human interaction, set `REPEAT_TIME` to be 1; for performance test, set `REPEAT_TIME` to be a large number (e.g. 100).
+  
+  - It will save the win rate to `output.txt` for every 100 iterations.
+
+- `dataset_vs_random.txt`
+
+  The output file for dataset with nearest neighbor v.s. (random strategies $\times$​ 2).
+
+- `search_vs_dataset.txt`
+
+  The output file for search algorithm v.s. (dataset with nearest neighbor + dataset with second nearest neighbor).
+
+- `search_vs_fictitious.txt`
+
+  The output file for search algorithm v.s. (fictitious play $\times$ 2).
