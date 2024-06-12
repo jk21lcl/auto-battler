@@ -68,12 +68,18 @@ This is the code repository for 2024 game theory course project by group 1.
 
 - `dataset_vs_random.txt`
 
-  The output file for dataset with nearest neighbor v.s. (random strategies $\times$​ 2).
+  The output file for dataset with nearest neighbor v.s. (random strategies $\times$​​ 2).
+
+  - The average win rate of dataset is 58.1% (note that 3 identical players will have 33.3% win rate on average), which implies that the expert strategies are indeed better than pure random strategies.
 
 - `search_vs_dataset.txt`
 
   The output file for search algorithm v.s. (dataset with nearest neighbor + dataset with second nearest neighbor).
 
+  - The average win rate of search algorithm is 89.3%, which implies that our search algorithm is even better than the expert strategies.
+
 - `search_vs_fictitious.txt`
 
-  The output file for search algorithm v.s. (fictitious play $\times$ 2).
+  The output file for search algorithm v.s. (fictitious play $\times$​ 2).
+  
+  - The average win rate of search algorithm is 100.0%, which means that our search algorithm can completely defeat fictitious play.
