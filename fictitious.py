@@ -1,4 +1,5 @@
 import copy
+import random
 from game_setting import Player, simulate_one_round, HealthLoss
 
 # choose an action using fictitious play
@@ -6,6 +7,8 @@ from game_setting import Player, simulate_one_round, HealthLoss
 # assume the target player is the first player
 # do not modify the input
 def fictitious(list : list[Player], cur_round, h_2, h_3):
+    if cur_round == 1:
+        return random.randint(0, 2)
     scores = [0, 0, 0]
     for s_1 in range(3):
         for s_2 in range(3):
